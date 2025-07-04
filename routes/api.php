@@ -13,4 +13,5 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+
 Route::get('/products', [ProductServiceController::class, 'fetchProducts']);
