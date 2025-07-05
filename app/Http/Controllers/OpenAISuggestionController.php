@@ -6,6 +6,7 @@ use App\Http\Requests\SuggestionRequest;
 use App\Http\Responses\ApiResponse;
 use App\Services\OpenAIService;
 use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Response;
 
 class OpenAISuggestionController extends Controller
