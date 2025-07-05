@@ -23,4 +23,14 @@ class ApiResponse
             'status_code' => $statusCode,
         ], $statusCode);
     }
+
+    public static function validationError($errors = [], $statusCode = Response::HTTP_UNPROCESSABLE_ENTITY): JsonResponse
+    {
+        return response()->json([
+            'payload' => null,
+            'errors' => $errors,
+            'message' => 'Validation failed',
+            'status_code' => $statusCode,
+        ], $statusCode);
+    }
 }
