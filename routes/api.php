@@ -21,4 +21,6 @@ Route::post('/suggestion', [OpenAISuggestionController::class, 'suggestion'])->n
 
 Route::group(['prefix'=>'report','as'=>'report.'], function(){
     Route::post('/export-quote-summary', [ExportReportController::class, 'exportReport'])->name('export');
+    Route::get('/fetch-all', [ExportReportController::class, 'fetchAllReports'])->name('fetch');
+
 });
