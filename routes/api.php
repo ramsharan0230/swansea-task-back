@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OpenAISuggestionController;
 use App\Http\Controllers\ProductServiceController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,4 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/products', [ProductServiceController::class, 'fetchProducts']);
+Route::get('/products', [ProductServiceController::class, 'fetchProducts'])->name('fetch-all-products');
+Route::post('/suggestion', [OpenAISuggestionController::class, 'suggestion'])->name('ai.suggestion');
