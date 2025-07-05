@@ -8,6 +8,7 @@ use App\Models\Report;
 use App\Services\ExportReportService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Log;
 
 class ExportReportController extends Controller
@@ -29,7 +30,7 @@ class ExportReportController extends Controller
     }
 
 
-    public function reports(Request $request) : JsonResponse 
+    public function fetchAllReports(Request $request) : JsonResponse 
     {
         $reports = Report::where('ip_address', $request->ip())->get();
         return ApiResponse::success($reports, 'Reports fetched successfully.', Response::HTTP_OK);    
