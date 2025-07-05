@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ExportReportController;
 use App\Http\Controllers\OpenAISuggestionController;
 use App\Http\Controllers\ProductServiceController;
 use Illuminate\Support\Facades\Route;
@@ -17,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/products', [ProductServiceController::class, 'fetchProducts'])->name('fetch-all-products');
 Route::post('/suggestion', [OpenAISuggestionController::class, 'suggestion'])->name('ai.suggestion');
+
+Route::group(['prefix'=>'report','as'=>'report.'], function(){
+    Route::post('/export-quote-summary', [ExportReportController::class, 'exportReport'])->name('export');
+});
