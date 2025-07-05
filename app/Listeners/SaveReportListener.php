@@ -29,7 +29,16 @@ class SaveReportListener
 
         // save file in directory
         $filePath = "reports/{$data['filename']}";
-        $url = Storage::url($filePath);
+        if (isset($data['content'])) {
+            $result = Storage::disk('public')->put($filePath, $data['content']);
+            Log::info('File save result', [
+                'path' => $filePath,
+                'result' => $result,
+                'size' => strlen($data['content'])
+            ]);
+        }
+
+        $url = "/storage/$filePath";
 
         Report::create([
             'name'         => $data['filename'],
@@ -37,7 +46,6 @@ class SaveReportListener
             'ip_address'   => $data['ipAddress'] ?? null,
             'report_type'  => $data['reportType'] ?? null,
             'url'          => $url,
-
         ]);
     }
 }
