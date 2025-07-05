@@ -19,6 +19,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/products', [ProductServiceController::class, 'fetchProducts'])->name('fetch-all-products');
 Route::post('/suggestion', [OpenAISuggestionController::class, 'suggestion'])->name('ai.suggestion');
 
-Route::prefix('/report', function(){
-    Route::post('/export-quote-summary', [ExportReportController::class, 'exportReport']);
+Route::group(['prefix'=>'report','as'=>'report.'], function(){
+    Route::post('/export-quote-summary', [ExportReportController::class, 'exportReport'])->name('export');
 });
