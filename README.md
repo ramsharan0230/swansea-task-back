@@ -11,31 +11,29 @@
     -   [Optionally Build Cache](#optionally-build-cache)
 -   [Seeds](#seeds)
     -   [Product Service seeder](#seeded-roles)
+-   [Open AI](#AIINTEGRATION)
+    -   [Open AI Model](#seeded-roles)
 -   [Routes](#routes)
 -   [Other API keys](#other-api-keys)
 -   [Environment File](#environment-file)
 
 ### About
 
-Smart Quotation is a backend application built using Laravel 10, designed for efficient management of customer quote summaries. It offers seamless generation of PDF and CSV reports and integrates with the OpenAI GPT-4.0 API for enhancing quotations with AI-powered suggestions.
+Smart Quote enables efficient handling of quote generation with a focus on profitability and sustainability. Users can:
 
-The system includes:
+    - Input a list of products/services with cost, sell price, and quantity
+    - Add estimated labor hours and labor cost per hour
+    - Define fixed overheads and target profit margins
 
-    Modern RESTful architecture powered by Laravel 10.
+    The app performs core profitability calculations, identifies low-margin line items, and uses OpenAI GPT-4.0 to suggest data-driven improvements. All generated PDF and CSV reports are versioned and saved in the database, allowing historical access and traceability.
 
-    Export capabilities using barryvdh/laravel-dompdf (PDF) and league/csv (CSV).
+    AI plays a strategic role in enhancing profitability by:
 
-    AI enhancement using OpenAI GPT-4.0 for refining quote descriptions based on selected products.
+    - Recommending alternative products to improve margins
+    - Suggesting labor or resource allocation changes
+    - Generating a user-friendly profitability summary
 
-    Modular structure using Laravel’s Controller, Request, Resource, and Middleware components.
 
-    IP tracking for user-specific report access and logging.
-
-    Version control for exported reports (PDF & CSV).
-
-    Authentication, soft delete recovery, and CORS middleware for API accessibility.
-
-    It is designed to be developer-friendly, scalable, and extensible, leveraging Laravel's latest features and best practices.
 
 ### Features
 
@@ -52,10 +50,13 @@ The system includes:
 | Uses [League/csv] for CSV file generation(can be changed)                                                                                            |
 | Uses [barryvdh/laravel-dompdf] for PDF file generation(can be changed)                                                                               |
 | Fetch open ai suggestion based on product lists and selection of the product to enhance the quotation                                                |
+| Calculates gross margin, labor cost, overheads, and highlights low-margin line items                                                                 |
+| Uses OpenAI GPT-4.0 to suggest better products, optimize margins, and summarize profitability                                                        |
+| Profitability health indicator (Green / Amber / Red), editable AI suggestions                                                                        |
+| Warns when total labor hours exceed a sustainable threshold                                                                                          |
 | Generate pdf and csv reports                                                                                                                         |
 | User ip address tracking and based on ip, reports are fetched                                                                                        |
 | User generated pdf and csv files are stored in public directory and in table                                                                         |
-| Restore Soft Deleted Users                                                                                                                           |
 | Versioning of the reports                                                                                                                            |
 | User can download different version of reports                                                                                                       |
 | Middleware for CORS issue for frontend and backend                                                                                                   |
@@ -91,6 +92,15 @@ The system includes:
 | 100? 4K DB100 TV Black Frame, Back & Glass   | 100-4k-db100-tv-black-frame-back-glass | 1  | 32083.10 | 54999.60 | NULL | DB100BB | 1
 | AIM8 TWO Series 2, 8" 2-way, In-Ceiling Speaker | aim8-two-series-2-8-2-way-in-ceiling-speaker | 4  | 786.68  | 2360.00  | NULL | NULL | 1
 
+
+### AIINTEGRATION
+
+##### AI Integration
+
+    - Model: GPT-4.0 (via OpenAI API)
+    - Purpose: Analyze selected product data, identify optimization opportunities, and generate client-friendly summaries
+    - Outcome: Enhances profitability while maintaining product quality
+    
 ### Routes
 
 ```bash
@@ -114,12 +124,12 @@ The system includes:
 Example `.env` file:
 
 ```bash
-APP_NAME=Laravel
+APP_NAME=SmartQuote
 APP_ENV=local
 APP_KEY=
 APP_DEBUG=true
 APP_URL=http://localhost
-APP_PROJECT_VERSION=7
+APP_PROJECT_VERSION=1.0
 
 LOG_CHANNEL=stack
 
@@ -168,13 +178,6 @@ PUSHER_APP_CLUSTER=
 
 MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
 MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
-
-ACTIVATION=true
-ACTIVATION_LIMIT_TIME_PERIOD=24
-ACTIVATION_LIMIT_MAX_ATTEMPTS=3
-NULL_IP_ADDRESS=0.0.0.0
-
-DEBUG_BAR_ENVIRONMENT=local
 
 OPENAI_API_KEY=
 OPENAI_MODEL=
