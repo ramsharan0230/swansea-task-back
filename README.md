@@ -17,7 +17,25 @@
 
 ### About
 
-Laravel 10 with user authentication, registration with email confirmation, social media authentication, password recovery, and captcha protection. Uses official [Bootstrap 4](https://getbootstrap.com). This also makes full use of Controllers for the routes, templates for the views, and makes use of middleware for routing. Project can be stood up in minutes.
+Smart Quotation is a backend application built using Laravel 10, designed for efficient management of customer quote summaries. It offers seamless generation of PDF and CSV reports and integrates with the OpenAI GPT-4.0 API for enhancing quotations with AI-powered suggestions.
+
+The system includes:
+
+    Modern RESTful architecture powered by Laravel 10.
+
+    Export capabilities using barryvdh/laravel-dompdf (PDF) and league/csv (CSV).
+
+    AI enhancement using OpenAI GPT-4.0 for refining quote descriptions based on selected products.
+
+    Modular structure using Laravel’s Controller, Request, Resource, and Middleware components.
+
+    IP tracking for user-specific report access and logging.
+
+    Version control for exported reports (PDF & CSV).
+
+    Authentication, soft delete recovery, and CORS middleware for API accessibility.
+
+    It is designed to be developer-friendly, scalable, and extensible, leveraging Laravel's latest features and best practices.
 
 ### Features
 
