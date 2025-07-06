@@ -86,8 +86,9 @@ Smart Quote enables efficient handling of quote generation with a focus on profi
 ###### And thats it with the caveat of setting up and configuring your development environment. I recommend [Laravel Homestead](https://laravel.com/docs/master/homestead)
 
 ### Seeds
+    The application comes with a sample Bill of Materials (BoM) provided in the file bill_of_material.csv. This file contains real-world product names, trade prices, retail pricing, and quantities. It is used to seed the products table during the initial setup.
 
-##### Seeded Products
+##### Seeded Products Formats
 
 | name           | slug | quantity       | trade_price      | retail_price     | mpn       | sku       | status  
 | 100? 4K DB100 TV Black Frame, Back & Glass   | 100-4k-db100-tv-black-frame-back-glass | 1  | 32083.10 | 54999.60 | NULL | DB100BB | 1
@@ -108,10 +109,10 @@ Smart Quote enables efficient handling of quote generation with a focus on profi
 +--------+----------------------------------------+---------------------------------------+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 | Domain | Method                                 | URI                                   | Name                                          | Action                                                                                                          | Middleware                                                   |
 +--------+----------------------------------------+---------------------------------------+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
-|        | GET|HEAD                               | /api/products                                     | fetch-all-products                                       | App\Http\Controllers\ProductServiceController@fetchProducts                                                                  | web                                             |
-|        | POST                                   | /api/suggestion                          | ai.suggestion                                  | App\Http\Controllers\UsersManagementController@search                                                           | web  |
-|        | GET|HEAD                               | /api/report/fetch-all              | report.fetch                                 | App\Http\Controllers\ExportReportController@fetchAllReports                                                      | web                                    |
-|        | POST                               | /api/report/export-quote-summary            | report.export                               | App\Http\Controllers\ExportReportController@exportReport                                                    | web                                    |
+|  127.0.0.1      | GET|HEAD                               | /api/products                                     | fetch-all-products                                       | App\Http\Controllers\ProductServiceController@fetchProducts                                                                  | web                                             |
+|  127.0.0.1    | POST                                   | /api/suggestion                          | ai.suggestion                                  | App\Http\Controllers\UsersManagementController@search                                                           | web  |
+|  127.0.0.1    | GET|HEAD                               | /api/report/fetch-all              | report.fetch                                 | App\Http\Controllers\ExportReportController@fetchAllReports                                                      | web                                    |
+|  127.0.0.1      | POST                               | /api/report/export-quote-summary            | report.export                               | App\Http\Controllers\ExportReportController@exportReport                                                    | web                                    |
 +--------+----------------------------------------+---------------------------------------+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 ```
 
