@@ -2,6 +2,13 @@
 
 #### Smart Quotation is a Laravel-based backend application that enables efficient handling of customer quote summaries. It includes robust export capabilities in both PDF and CSV formats and AI-enhanced suggestions using OpenAI GPT-4.0.
 
+### Motivation
+The backend is the engine that powers the Smart Quote system. It handles all the heavy lifting — from managing quote data and running profitability calculations to storing reports and interacting with AI to generate helpful suggestions.
+
+I chose to build it with Laravel because it’s a solid and reliable PHP framework that makes it easier to write clean, maintainable code while handling lots of functionality out of the box. This backend acts as the bridge between the frontend and the data, making sure everything runs smoothly and securely.
+
+Integrating OpenAI’s GPT-4 into the backend lets us offer smart suggestions to users, helping them optimize their quotes with AI-powered insights without exposing any sensitive API keys on the frontend.
+
 ### Table of contents
 
 -   [About](#about)
@@ -37,12 +44,6 @@ Smart Quote enables efficient handling of quote generation with a focus on profi
     - Suggesting labor or resource allocation changes
     - Generating a user-friendly profitability summary
 
-### Motivation
-The backend is the engine that powers the Smart Quote system. It handles all the heavy lifting — from managing quote data and running profitability calculations to storing reports and interacting with AI to generate helpful suggestions.
-
-I chose to build it with Laravel because it’s a solid and reliable PHP framework that makes it easier to write clean, maintainable code while handling lots of functionality out of the box. This backend acts as the bridge between the frontend and the data, making sure everything runs smoothly and securely.
-
-Integrating OpenAI’s GPT-4 into the backend lets us offer smart suggestions to users, helping them optimize their quotes with AI-powered insights without exposing any sensitive API keys on the frontend.
 
 ### Features
 
