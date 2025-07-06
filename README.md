@@ -16,6 +16,8 @@
 -   [Routes](#routes)
 -   [Other API keys](#other-api-keys)
 -   [Environment File](#environment-file)
+-   [Approach](#approach)
+-   [Opening an Issue](#opening-an-issue)
 
 ### About
 
@@ -181,6 +183,15 @@ MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 OPENAI_API_KEY=
 OPENAI_MODEL=
 ```
+
+### Approach
+
+    - Clean Architecture: Followed MVC and service-oriented design
+    - AI Suggestions: GPT-4 used to evaluate pricing, swap alternatives, and summarize business insights
+    - Report System: Version-controlled, easily exportable, and traceable for audit/review
+    - Profitability Health: Clearly indicates quote status (Green: Profitable, Amber: Caution, Red: Loss)
+
+
 
 ### Opening an Issue
 
