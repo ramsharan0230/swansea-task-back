@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Sluggable\HasSlug;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Spatie\Sluggable\SlugOptions;
 
 class Product extends Model
 {
-    use HasSlug;
+    use HasSlug, HasFactory;
 
     protected $table="products";
     
