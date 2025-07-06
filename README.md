@@ -11,7 +11,7 @@
     -   [Optionally Build Cache](#optionally-build-cache)
 -   [Seeds](#seeds)
     -   [Product Service seeder](#seeded-roles)
--   [Open AI](#AIINTEGRATION)
+-   [Open AI](#AI-Integration)
     -   [Open AI Model](#seeded-roles)
 -   [Routes](#routes)
 -   [Other API keys](#other-api-keys)
@@ -87,20 +87,19 @@ Smart Quote enables efficient handling of quote generation with a focus on profi
 
 ##### Seeded Products
 
-| name           | slug | quantity       | trade_price      | retail_price     | mpn       | sku       | status       |
-| :-------------- | :------- | :----------- | :-----------  | :----------- |  
+| name           | slug | quantity       | trade_price      | retail_price     | mpn       | sku       | status  
 | 100? 4K DB100 TV Black Frame, Back & Glass   | 100-4k-db100-tv-black-frame-back-glass | 1  | 32083.10 | 54999.60 | NULL | DB100BB | 1
 | AIM8 TWO Series 2, 8" 2-way, In-Ceiling Speaker | aim8-two-series-2-8-2-way-in-ceiling-speaker | 4  | 786.68  | 2360.00  | NULL | NULL | 1
 
 
-### AIINTEGRATION
+### AI-Integration
 
 ##### AI Integration
 
     - Model: GPT-4.0 (via OpenAI API)
     - Purpose: Analyze selected product data, identify optimization opportunities, and generate client-friendly summaries
     - Outcome: Enhances profitability while maintaining product quality
-    
+
 ### Routes
 
 ```bash
