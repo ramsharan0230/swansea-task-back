@@ -5,7 +5,9 @@
 ### Table of contents
 
 -   [About](#about)
+-   [Motivation](#motivation)
 -   [Features](#features)
+-   [Design Decisions](#design-decisions)
 -   [Installation Instructions](#installation-instructions)
     -   [Build the Front End Assets with Mix](#build-the-front-end-assets-with-mix)
     -   [Optionally Build Cache](#optionally-build-cache)
@@ -35,7 +37,12 @@ Smart Quote enables efficient handling of quote generation with a focus on profi
     - Suggesting labor or resource allocation changes
     - Generating a user-friendly profitability summary
 
+### Motivation
+The backend is the engine that powers the Smart Quote system. It handles all the heavy lifting — from managing quote data and running profitability calculations to storing reports and interacting with AI to generate helpful suggestions.
 
+I chose to build it with Laravel because it’s a solid and reliable PHP framework that makes it easier to write clean, maintainable code while handling lots of functionality out of the box. This backend acts as the bridge between the frontend and the data, making sure everything runs smoothly and securely.
+
+Integrating OpenAI’s GPT-4 into the backend lets us offer smart suggestions to users, helping them optimize their quotes with AI-powered insights without exposing any sensitive API keys on the frontend.
 
 ### Features
 
@@ -62,6 +69,16 @@ Smart Quote enables efficient handling of quote generation with a focus on profi
 | Versioning of the reports                                                                                                                            |
 | User can download different version of reports                                                                                                       |
 | Middleware for CORS issue for frontend and backend                                                                                                   |
+
+
+### Design Decisions
+
+1. Why Laravel? I picked Laravel 10 because it’s easy to work with, has great community support, and helps speed up development with its built-in tools like routing, validation, and security features.
+2. API-First: The backend is designed as a clean API that the frontend talks to. This keeps things flexible — it means the same backend could support other clients later, like mobile apps or other services.
+3. Organized Code: I structured the code into clear parts — controllers handle requests, services do the business logic, and models manage data. This makes the code easier to understand and maintain.
+4. OpenAI Integration: All the AI work happens on the backend, keeping the OpenAI keys secure. The backend sends quote data to GPT-4 and returns useful suggestions to the frontend.
+5. Data Storage: Reports and quote versions are saved in a database, making it easy to track history and let users access past reports.
+6. Clean & Scalable: I followed best practices to keep the code clean and easy to grow in the future, so it’s ready for more features or changes down the road.
 
 ### Installation Instructions
 
