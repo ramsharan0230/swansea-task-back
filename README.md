@@ -21,57 +21,26 @@ Laravel 10 with user authentication, registration with email confirmation, socia
 
 ### Features
 
-#### A [Laravel](https://laravel.com/) 10 with [Bootstrap](https://getbootstrap.com) 4.x project.
+#### A [Laravel](https://laravel.com/) 10 project.
 
-| Laravel Auth Features                                                                                                                                |
+| Smart Quote Features                                                                                                                                |
 | :--------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Built on [Laravel](https://laravel.com/) 10                                                                                                          |
-| Built on [Bootstrap](https://getbootstrap.com/) 4                                                                                                    |
+| Built on [PHP](https://getbootstrap.com/) 8.1                                                                                                        |
 | Uses [MySQL](https://github.com/mysql) Database (can be changed)                                                                                     |
 | Uses [Artisan](https://laravel.com/docs/master/artisan) to manage database migration, schema creations, and create/publish page controller templates |
 | Dependencies are managed with [COMPOSER](https://getcomposer.org/)                                                                                   |
-| Laravel Scaffolding **User** and **Administrator Authentication**.                                                                                   |
-| User [Socialite Logins](https://github.com/laravel/socialite) ready to go - See API list used below                                                  |
-| [Google Maps API v3](https://developers.google.com/maps/documentation/javascript/) for User Location lookup and Geocoding                            |
-| CRUD (Create, Read, Update, Delete) Themes Management                                                                                                |
-| CRUD (Create, Read, Update, Delete) User Management                                                                                                  |
-| Robust [Laravel Logging](https://laravel.com/docs/master/errors#logging) with admin UI using MonoLog                                                 |
-| Google [reCaptcha Protection with Google API](https://developers.google.com/recaptcha/)                                                              |
-| User Registration with email verification                                                                                                            |
-| Makes use of Laravel [Mix](https://laravel.com/docs/master/mix) to compile assets                                                                    |
-| Makes use of [Language Localization Files](https://laravel.com/docs/master/localization)                                                             |
-| Active Nav states using [Laravel Requests](https://laravel.com/docs/master/requests)                                                                 |
-| Restrict User Email Activation Attempts                                                                                                              |
-| Capture IP to users table upon signup                                                                                                                |
-| Uses [Laravel Debugger](https://github.com/barryvdh/laravel-debugbar) for development                                                                |
-| Makes use of [Password Strength Meter](https://github.com/elboletaire/password-strength-meter)                                                       |
-| Makes use of [hideShowPassword](https://github.com/cloudfour/hideShowPassword)                                                                       |
-| User Avatar Image AJAX Upload with [Dropzone.js](https://www.dropzonejs.com/#configuration)                                                          |
-| User Gravatar using [Gravatar API](https://github.com/creativeorange/gravatar)                                                                       |
-| User Password Reset via Email Token                                                                                                                  |
-| User Login with remember password                                                                                                                    |
-| User [Roles/ACL Implementation](https://github.com/jeremykenedy/laravel-roles)                                                                       |
-| Roles and Permissions GUI                                                                                                                            |
-| Makes use of [Laravel's Soft Delete Structure](https://laravel.com/docs/master/eloquent#soft-deleting)                                               |
-| Soft Deleted Users Management System                                                                                                                 |
-| Permanently Delete Soft Deleted Users                                                                                                                |
-| User Delete Account with Goodbye email                                                                                                               |
-| User Restore Deleted Account Token                                                                                                                   |
+| Uses [OpenAI](platform.openai.com) API (can be changed)                                                                                              |
+| Uses [League/csv] for CSV file generation(can be changed)                                                                                            |
+| Uses [barryvdh/laravel-dompdf] for PDF file generation(can be changed)                                                                               |
+| Fetch open ai suggestion based on product lists and selection of the product to enhance the quotation                                                |
+| Generate pdf and csv reports                                                                                                                         |
+| User ip address tracking and based on ip, reports are fetched                                                                                        |
+| User generated pdf and csv files are stored in public directory and in table                                                                         |
 | Restore Soft Deleted Users                                                                                                                           |
-| View Soft Deleted Users                                                                                                                              |
-| Captures Soft Delete Date                                                                                                                            |
-| Captures Soft Delete IP                                                                                                                              |
-| Admin Routing Details UI                                                                                                                             |
-| Admin PHP Information UI                                                                                                                             |
-| Eloquent user profiles                                                                                                                               |
-| User Themes                                                                                                                                          |
-| 404 Page                                                                                                                                             |
-| 403 Page                                                                                                                                             |
-| Configurable Email Notification via [Laravel-Exception-Notifier](https://github.com/jeremykenedy/laravel-exception-notifier)                         |
-| Activity Logging using [Laravel-logger](https://github.com/jeremykenedy/laravel-logger)                                                              |
-| Optional 2-step account login verfication with [Laravel 2-Step Verification](https://github.com/jeremykenedy/laravel2step)                           |
-| Uses [Laravel PHP Info](https://github.com/jeremykenedy/laravel-phpinfo) package                                                                     |
-| Uses [Laravel Blocker](https://github.com/jeremykenedy/laravel-blocker) package                                                                      |
+| Versioning of the reports                                                                                                                            |
+| User can download different version of reports                                                                                                       |
+| Middleware for CORS issue for frontend and backend                                                                                                   |
 
 ### Installation Instructions
 
@@ -82,21 +51,12 @@ Laravel 10 with user authentication, registration with email confirmation, socia
     - `\q`
 3. From the projects root run `cp .env.example .env`
 4. Configure your `.env` file
-5. Install composer, php-mysql, php-ext and php-dom (dependent on your distrubtion, For Debian run `apt install composer php-mysql php-ext php-dom`)
-6. Run `composer update` from the projects root folder
-7. From the projects root folder run:
-
-```
-php artisan vendor:publish --tag=laravelroles &&
-php artisan vendor:publish --tag=laravel2step &&
-php artisan vendor:publish --tag=laravel-email-database-log-migration
-```
-
-7. From the projects root folder run `sudo chmod -R 755 ../laravel-auth`
-8. From the projects root folder run `php artisan key:generate`
-9. From the projects root folder run `php artisan migrate`
-10. From the projects root folder run `composer dump-autoload`
-11. From the projects root folder run `php artisan db:seed`
+5. Run `composer install` from the projects root folder
+6. From the projects root folder run `sudo chmod -R 755 ../swansea-task-back`
+7. From the projects root folder run `php artisan key:generate`
+8. From the projects root folder run `php artisan migrate`
+9. From the projects root folder run `composer dump-autoload`
+10. From the projects root folder run `php artisan db:seed`
 
 #### Optionally Build Cache
 
@@ -106,59 +66,12 @@ php artisan vendor:publish --tag=laravel-email-database-log-migration
 
 ### Seeds
 
-##### Seeded Roles
+##### Seeded Products
 
--   Unverified - Level 0
--   User - Level 1
--   Administrator - Level 5
-
-##### Seeded Permissions
-
--   view.users
--   create.users
--   edit.users
--   delete.users
-
-##### Seeded Users
-
-| Email           | Password | Access       |
-| :-------------- | :------- | :----------- |
-| user@user.com   | password | User Access  |
-| admin@admin.com | password | Admin Access |
-
-##### Themes Seed List
-
--   [ThemesTableSeeder](https://github.com/jeremykenedy/laravel-auth/blob/master/database/seeders/ThemesTableSeeder.php)
--   NOTE: A lot of themes render incorrectly on Bootstrap 4 since their core was built to override Bootstrap 4. These will be updated soon and ones that do not render correctly will be removed from the seed. In the mean time you can remove them from the seed or manaully from the UI or database.
-
-##### Blocked Types Seed List
-
--   [BlockedTypeTableSeeder.php](https://github.com/jeremykenedy/laravel-auth/blob/master/database/seeders/BlockedTypeTableSeeder.php)
-
-| Slug        | Name         |
-| :---------- | :----------- |
-| email       | E-mail       |
-| ipAddress   | IP Address   |
-| domain      | Domain Name  |
-| user        | User         |
-| city        | City         |
-| state       | State        |
-| country     | Country      |
-| countryCode | Country Code |
-| continent   | Continent    |
-| region      | Region       |
-
-##### Blocked Items Seed List
-
--   [BlockedItemsTableSeeder.php](https://github.com/jeremykenedy/laravel-auth/blob/master/database/seeders/BlockedItemsTableSeeder.php)
-
-| Type   | Value          | Note                                     |
-| :----- | :------------- | :--------------------------------------- |
-| domain | test.com       | Block all domains/emails @test.com       |
-| domain | test.ca        | Block all domains/emails @test.ca        |
-| domain | fake.com       | Block all domains/emails @fake.com       |
-| domain | example.com    | Block all domains/emails @example.com    |
-| domain | mailinator.com | Block all domains/emails @mailinator.com |
+| name           | slug | quantity       | trade_price      | retail_price     | mpn       | sku       | status       |
+| :-------------- | :------- | :----------- | :-----------  | :----------- |  
+| 100? 4K DB100 TV Black Frame, Back & Glass   | 100-4k-db100-tv-black-frame-back-glass | 1  | 32083.10 | 54999.60 | NULL | DB100BB | 1
+| AIM8 TWO Series 2, 8" 2-way, In-Ceiling Speaker | aim8-two-series-2-8-2-way-in-ceiling-speaker | 4  | 786.68  | 2360.00  | NULL | NULL | 1
 
 ### Routes
 
@@ -166,17 +79,17 @@ php artisan vendor:publish --tag=laravel-email-database-log-migration
 +--------+----------------------------------------+---------------------------------------+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 | Domain | Method                                 | URI                                   | Name                                          | Action                                                                                                          | Middleware                                                   |
 +--------+----------------------------------------+---------------------------------------+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
-|        | GET|HEAD                               | /                                     | welcome                                       | App\Http\Controllers\WelcomeController@welcome                                                                  | web,checkblocked                                             |
-|        | GET|HEAD                               | _debugbar/assets/javascript           | debugbar.assets.js                            | Barryvdh\Debugbar\Controllers\AssetController@js                                                                | Barryvdh\Debugbar\Middleware\DebugbarEnabled,Closure         |
-|        | POST                                   | search-users                          | search-users                                  | App\Http\Controllers\UsersManagementController@search                                                           | web,auth,activated,role:admin,activity,twostep,checkblocked  |
-|        | GET|HEAD                               | social/handle/{provider}              | social.handle                                 | App\Http\Controllers\Auth\SocialController@getSocialHandle                                                      | web,activity,checkblocked                                    |
-|        | GET|HEAD                               | social/redirect/{provider}            | social.redirect                               | App\Http\Controllers\Auth\SocialController@getSocialRedirect                                                    | web,activity,checkblocked                                    |
+|        | GET|HEAD                               | /api/products                                     | fetch-all-products                                       | App\Http\Controllers\ProductServiceController@fetchProducts                                                                  | web                                             |
+|        | POST                                   | /api/suggestion                          | ai.suggestion                                  | App\Http\Controllers\UsersManagementController@search                                                           | web  |
+|        | GET|HEAD                               | /api/report/fetch-all              | report.fetch                                 | App\Http\Controllers\ExportReportController@fetchAllReports                                                      | web                                    |
+|        | POST                               | /api/report/export-quote-summary            | report.export                               | App\Http\Controllers\ExportReportController@exportReport                                                    | web                                    |
 +--------+----------------------------------------+---------------------------------------+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 ```
 
 ### Other API keys
 
--   [Google Maps API v3 Key](https://developers.google.com/maps/documentation/javascript/get-api-key#get-an-api-key)
+-   [OPEN AI Keys](https://platform.openai.com/api-keys#get-an-api-key)
+-   [OPENAI_MODEL](https://platform.openai.com/api-keys#get-an-model)
 
 ### Environment File
 
@@ -245,68 +158,9 @@ NULL_IP_ADDRESS=0.0.0.0
 
 DEBUG_BAR_ENVIRONMENT=local
 
+OPENAI_API_KEY=
+OPENAI_MODEL=
 ```
-
-#### Laravel Developement Packages Used References
-
--   https://laravel.com/docs/master/authentication
--   https://laravel.com/docs/master/authorization
--   https://laravel.com/docs/master/routing
--   https://laravel.com/docs/master/migrations
--   https://laravel.com/docs/master/queries
--   https://laravel.com/docs/master/views
--   https://laravel.com/docs/master/eloquent
--   https://laravel.com/docs/master/eloquent-relationships
--   https://laravel.com/docs/master/requests
--   https://laravel.com/docs/master/errors
-
-###### Updates:
-
--   Update to Laravel 10 (Major Changes)
--   Update to Laravel 9
--   Update to Laravel 8
--   Update to Laravel 7 [See changes in this PR](https://github.com/jeremykenedy/laravel-auth/pull/348/files)
--   Update to Laravel 6
--   Update to Laravel 5.8
--   Added [Laravel Blocker Package](https://github.com/jeremykenedy/laravel-blocker)
--   Added [PHP Info Package](https://github.com/jeremykenedy/laravel-phpinfo)
--   Update to Bootstrap 4
--   Update to Laravel 5.7
--   Added optional 2-step account login verfication with [Laravel 2-Step Verification](https://github.com/jeremykenedy/laravel2step)
--   Added activity logging using [Laravel-logger](https://github.com/jeremykenedy/laravel-logger)
--   Added Configurable Email Notification using [Laravel-Exception-Notifier](https://github.com/jeremykenedy/laravel-exception-notifier)
--   Update to Laravel 5.5
--   Added User Delete with Goodbye email
--   Added User Restore Deleted Account from email with secure token
--   Added [Soft Deletes](https://laravel.com/docs/master/eloquent#soft-deleting) and Soft Deletes Management panel
--   Added User Account Settings to Profile Edit
--   Added User Change Password to Profile Edit
--   Added User Delete Account to Profile Edit
--   Added [Password Strength Meter](https://github.com/elboletaire/password-strength-meter)
--   Added [hideShowPassword](https://github.com/cloudfour/hideShowPassword)
--   Added Admin Routing Details
--   Admin PHP Information
--   Added Robust [Laravel Logging](https://laravel.com/docs/master/errors#logging) with admin UI using MonoLog
--   Added Active Nav states using [Laravel Requests](https://laravel.com/docs/master/requests)
--   Added [Laravel Debugger](https://github.com/barryvdh/laravel-debugbar) with Service Provider to manage status in `.env` file.
--   Updated Capture IP not found IP address
--   Added User Avatar Image AJAX Upload with [Dropzone.js](http://www.dropzonejs.com/#configuration)
--   Added User Gravatar using Gravatar API
--   Added Themes Management.
--   Add user profiles with seeded list and global view
--   Major overhaul on Laravel 5.4
--   Update from Laravel 5.1 to 5.2
--   Added eloquent editable user profile
--   Added IP Capture
--   Added Google Maps API v3 for User Location lookup
--   Added Google Maps API v3 for User Location Input Geocoding
--   Added Google Maps API v3 for User Location Map with Options
--   Added CRUD(Create, Read, Update, Delete) User Management
-
-```
-
--   Tree command can be installed using brew: `brew install tree`
--   File tree generated using command `tree -a -I '.git|node_modules|vendor|storage|tests'`
 
 ### Opening an Issue
 
