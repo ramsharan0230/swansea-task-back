@@ -1,6 +1,6 @@
 ## Smart Quote
 
-#### Smart Quotation is a Laravel-based backend application that enables efficient handling of customer quote summaries. It includes robust export capabilities in both PDF and CSV formats and AI-enhanced suggestions using OpenAI GPT-4.0.
+#### Smart Quote is a Laravel-based backend prototype developed as part of a technical challenge to demonstrate a practical solution for assessing quote profitability in AV dealer workflows. This system acts as a Profitability Checker that allows users to input a detailed breakdown of products, services, labor, and overheads, and receive calculated insights into profit margins, cost breakdowns, and risk indicators. It also leverages OpenAI GPT-4 to generate AI-driven suggestions for optimizing quotes — such as recommended price adjustments, labor improvements, or product substitutions — and delivers this in a user-friendly format to aid business decisions.
 
 ### Motivation
 The backend is the engine that powers the Smart Quote system. It handles all the heavy lifting — from managing quote data and running profitability calculations to storing reports and interacting with AI to generate helpful suggestions.
@@ -45,6 +45,16 @@ Smart Quote enables efficient handling of quote generation with a focus on profi
     - Generating a user-friendly profitability summary
 
 
+### Design Decisions
+
+1. Why Laravel? I picked Laravel 10 because it’s easy to work with, has great community support, and helps speed up development with its built-in tools like routing, validation, and security features.
+2. API-First: The backend is designed as a clean API that the frontend talks to. This keeps things flexible — it means the same backend could support other clients later, like mobile apps or other services.
+3. Organized Code: I structured the code into clear parts — controllers handle requests, services do the business logic, and models manage data. This makes the code easier to understand and maintain.
+4. OpenAI Integration: All the AI work happens on the backend, keeping the OpenAI keys secure. The backend sends quote data to GPT-4 and returns useful suggestions to the frontend.
+5. Data Storage: Reports and quote versions are saved in a database, making it easy to track history and let users access past reports.
+6. Clean & Scalable: I followed best practices to keep the code clean and easy to grow in the future, so it’s ready for more features or changes down the road.
+
+
 ### Features
 
 #### A [Laravel](https://laravel.com/) 10 project.
@@ -71,15 +81,6 @@ Smart Quote enables efficient handling of quote generation with a focus on profi
 | User can download different version of reports                                                                                                       |
 | Middleware for CORS issue for frontend and backend                                                                                                   |
 
-
-### Design Decisions
-
-1. Why Laravel? I picked Laravel 10 because it’s easy to work with, has great community support, and helps speed up development with its built-in tools like routing, validation, and security features.
-2. API-First: The backend is designed as a clean API that the frontend talks to. This keeps things flexible — it means the same backend could support other clients later, like mobile apps or other services.
-3. Organized Code: I structured the code into clear parts — controllers handle requests, services do the business logic, and models manage data. This makes the code easier to understand and maintain.
-4. OpenAI Integration: All the AI work happens on the backend, keeping the OpenAI keys secure. The backend sends quote data to GPT-4 and returns useful suggestions to the frontend.
-5. Data Storage: Reports and quote versions are saved in a database, making it easy to track history and let users access past reports.
-6. Clean & Scalable: I followed best practices to keep the code clean and easy to grow in the future, so it’s ready for more features or changes down the road.
 
 ### Installation Instructions
 
