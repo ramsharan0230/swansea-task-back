@@ -21,21 +21,14 @@ Smart Quotation is a backend application built using Laravel 10, designed for ef
 
 The system includes:
 
-    Modern RESTful architecture powered by Laravel 10.
-
-    Export capabilities using barryvdh/laravel-dompdf (PDF) and league/csv (CSV).
-
-    AI enhancement using OpenAI GPT-4.0 for refining quote descriptions based on selected products.
-
-    Modular structure using Laravel’s Controller, Request, Resource, and Middleware components.
-
-    IP tracking for user-specific report access and logging.
-
-    Version control for exported reports (PDF & CSV).
-
-    Authentication, soft delete recovery, and CORS middleware for API accessibility.
-
-    It is designed to be developer-friendly, scalable, and extensible, leveraging Laravel's latest features and best practices.
+    - Modern RESTful architecture powered by Laravel 10.
+    - Export capabilities using barryvdh/laravel-dompdf (PDF) and league/csv (CSV).
+    - AI enhancement using OpenAI GPT-4.0 for refining quote descriptions based on selected products.
+    -  Modular structure using Laravel’s Controller, Request, Resource, and Middleware components.
+    - IP tracking for user-specific report access and logging.
+    - Version control for exported reports (PDF & CSV).
+    - Authentication, soft delete recovery, and CORS middleware for API accessibility.
+    - It is designed to be developer-friendly, scalable, and extensible, leveraging Laravel's latest features and best practices.
 
 ### Features
 
